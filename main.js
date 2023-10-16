@@ -6,11 +6,11 @@ const csvFile = fs.readFileSync('glicemia.csv', 'utf8');
 const QUANTIDADE_MAXIMA_EXIBIDA = 80;
 const UNICODE_QUADRADO = "□";
 const valoresGlicemia = csvFile
-	.split('\n')
-	.map(linha => Number((linha.split(',')[1] || '').replace(/\r/g, '')))
-	.slice(1)
+  .split('\n')
+  .map(linha => Number((linha.split(',')[1] || '').replace(/\r/g, '')))
+  .slice(1)
   .reverse()
-	.slice(0, QUANTIDADE_MAXIMA_EXIBIDA)
+  .slice(0, QUANTIDADE_MAXIMA_EXIBIDA)
   .reverse();
 
 const MAIOR_VALOR_GLICEMIA = Math.max(...valoresGlicemia);
